@@ -13,6 +13,12 @@ function getMenuItems(text) {
     .filter(Boolean);
 }
 
+// 중복 없이 랜덤 메뉴 n개 뽑기
+function pickRandomMenus(items, count) {
+  const shuffled = [...items].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, count);
+}
+
 function pickRandomMenu() {
   const menus = getMenuItems(menuInput.value);
 
@@ -21,8 +27,9 @@ function pickRandomMenu() {
     return;
   }
 
-  const randomIndex = Math.floor(Math.random() * menus.length);
-  result.textContent = `오늘의 추천은 ${menus[randomIndex]}!`;
+  const pickCount = Math.min(2, menus.length);
+  const pickedMenus = pickRandomMenus(menus, pickCount);
+  result.textContent = `오늘의 추천은 ${pickedMenus.join(" + ")}!`;
 }
 
 function resetMenus() {
