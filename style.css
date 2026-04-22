@@ -1,0 +1,135 @@
+:root {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #e5e7eb;
+  --secondary-dark: #d1d5db;
+  --accent: #fef3c7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, sans-serif;
+  background: linear-gradient(180deg, #eff6ff 0%, var(--bg) 45%);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.container {
+  width: min(100%, 640px);
+  background: var(--card);
+  border-radius: 18px;
+  padding: 1.25rem;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.12);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 5vw, 2.1rem);
+  text-align: center;
+}
+
+.description {
+  margin: 0.6rem 0 1rem;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 0.85rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: 2px solid #93c5fd;
+  border-color: #60a5fa;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.8rem 0.95rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#pickButton {
+  background: var(--primary);
+  color: #fff;
+}
+
+#pickButton:hover {
+  background: var(--primary-dark);
+}
+
+.secondary {
+  background: var(--secondary);
+  color: #111827;
+}
+
+.secondary:hover {
+  background: var(--secondary-dark);
+}
+
+.result-card {
+  margin-top: 1rem;
+  background: var(--accent);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.result-card h2 {
+  margin: 0;
+  font-size: 1rem;
+  color: #92400e;
+}
+
+#result {
+  margin: 0.55rem 0 0;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  font-weight: 800;
+  color: #78350f;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
+  }
+}
